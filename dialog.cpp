@@ -1,7 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include "privatedialog.h"
-
+#include <QUrl>
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -17,7 +17,7 @@ Dialog::Dialog(QWidget *parent) :
   this->setWindowTitle("设置");
   settings=new QSettings(DIR,QSettings::IniFormat);
   //设置鼠标监测
-  if(settings->value("option/mousecheck").toBool()==true)
+/*  if(settings->value("option/mousecheck").toBool()==true)
     {
       ui->checkBox->setCheckState(Qt::Checked);
     }
@@ -25,6 +25,7 @@ Dialog::Dialog(QWidget *parent) :
     {
       ui->checkBox->setCheckState(Qt::Unchecked);
     }
+*/
 
   allLayout[0]=ui->gridLayout_0;
   allLayout[1]=ui->gridLayout_1;
@@ -129,6 +130,6 @@ void Dialog::on_pushButton_4_clicked()
 
 void Dialog::on_pushButton_5_clicked()
 {
-  const QUrl regUrl(QLatin1String("https://github.com/yyngfive/schedule"));
+  const QUrl regUrl(QLatin1String("https://yyngfive.github.io/update.html"));
   QDesktopServices::openUrl(regUrl);
 }

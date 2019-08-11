@@ -81,10 +81,11 @@ public:
     "美术",
     "体育",
     "信息",
-    "实事",
+    "时事",
     "班会",
     "活动",
     "阅读",
+    "语/英",
     " "
   };
 
@@ -102,17 +103,17 @@ public:
         QFont maxFont;
         maxFont.setPointSize(27);
         maxFont.setFamily("微软雅黑");
-        for(int i=0;i<9;i++)
-          {
-            listWid->item(i)->setTextColor(QColor(255,255,255,255));
-            listWid->item(i)->setFont(minFont);
-          }
         settings->setArrayIndex(i);
+        listWid->item(i)->setText(list[settings->value("name").toInt()]);
+        /*
         listWid->takeItem(i);
         QListWidgetItem *item = new QListWidgetItem;
 
         item->setText(list[settings->value("name").toInt()]);
         listWid->insertItem(i,item);
+        */
+        listWid->item(i)->setTextColor(QColor(255,255,255,255));
+        listWid->item(i)->setFont(minFont);
 
         start.insert(i,settings->value("start").toString());
         end.insert(i,settings->value("end").toString());

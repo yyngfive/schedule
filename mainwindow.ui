@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>90</width>
-    <height>241</height>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>20</y>
+      <y>30</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -40,7 +40,7 @@ background-color: rgba(0, 0, 0, 100);
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>20</y>
+      <y>30</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -57,7 +57,7 @@ background-color: rgba(0, 0, 0, 100);</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>50</y>
+      <y>60</y>
       <width>91</width>
       <height>461</height>
      </rect>
@@ -66,44 +66,135 @@ background-color: rgba(0, 0, 0, 100);</string>
      <string notr="true">background-color: rgba(0, 0, 0, 100);
 font:  &quot;微软雅黑&quot;;</string>
     </property>
+    <property name="currentRow">
+     <number>-1</number>
+    </property>
     <item>
      <property name="text">
       <string>数学</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
      </property>
     </item>
     <item>
      <property name="text">
       <string>物理</string>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
+     </property>
     </item>
     <item>
      <property name="text">
       <string>化学</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
      </property>
     </item>
     <item>
      <property name="text">
       <string>生物</string>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
+     </property>
     </item>
     <item>
      <property name="text">
       <string>历史</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
      </property>
     </item>
     <item>
      <property name="text">
       <string>英语</string>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
+     </property>
     </item>
     <item>
      <property name="text">
       <string>政治</string>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
+     </property>
     </item>
     <item>
      <property name="text">
       <string>地理</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>25</pointsize>
+      </font>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+     <property name="flags">
+      <set>ItemIsDragEnabled|ItemIsEnabled</set>
      </property>
     </item>
     <item>
@@ -112,17 +203,11 @@ font:  &quot;微软雅黑&quot;;</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>26</pointsize>
+       <pointsize>25</pointsize>
       </font>
      </property>
-     <property name="background">
-      <brush brushstyle="SolidPattern">
-       <color alpha="100">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
-       </color>
-      </brush>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
      </property>
     </item>
    </widget>
@@ -132,23 +217,23 @@ font:  &quot;微软雅黑&quot;;</string>
       <x>0</x>
       <y>0</y>
       <width>91</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 12pt &quot;微软雅黑&quot;;
+     <string notr="true">font: 17pt &quot;微软雅黑&quot;;
 background-color: rgba(0, 0, 0, 100);
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>19:20</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>30</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -159,6 +244,19 @@ background-color: rgba(0, 0, 0, 100);</string>
     </property>
     <property name="text">
      <string>۞</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

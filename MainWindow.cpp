@@ -7,6 +7,7 @@
 
 
 
+
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::MainWindow)
@@ -16,6 +17,24 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->pushButton->setMouseTracking(true);
   ui->pushButton_2->setMouseTracking(true);
   this->setMouseTracking(true);
+
+  //QString appName = QApplication::applicationName();//程序名称
+
+      //QString appPath = QApplication::applicationFilePath();// 程序路径
+
+    //  appPath = appPath.replace("/","\\");
+
+    //  QSettings *reg=new QSettings(
+    //              "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+     //             QSettings::NativeFormat);
+
+    //  QString val = reg->value(appName).toString();// 如果此键不存在，则返回的是空字符串
+    //  if(val != appPath)
+   //       reg->setValue(appName,appPath);// 如果移除的话，reg->remove(applicationName);
+
+     // reg->deleteLater();
+
+
   //QFile qssfile(MAINDIR);
   //qssfile.open(QFile::ReadOnly);
  // QString qss;
@@ -25,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
   QLocale locale=QLocale::English;
   week=locale.toString(QDateTime::currentDateTime(),"dddd");
   //设置时间显示的字体
-  QPalette palette; palette.setColor(QPalette::WindowText,Qt::red);
+  QPalette palette; palette.setColor(QPalette::WindowText,Qt::black);
   ui->label_CurrentTime->setPalette(palette); //定时器
   QTimer *CurrentTime = new QTimer(this);
   CurrentTime->start(0); //使用定时器信号槽，尽快更新时间的显示
@@ -40,17 +59,6 @@ MainWindow::MainWindow(QWidget *parent) :
      });
   qDebug()<<week;
   updateSet(ui->listWidget,week);
-  QFont minFont;
-  minFont.setPointSize(25);
-  minFont.setFamily("微软雅黑");
-  QFont maxFont;
-  maxFont.setPointSize(27);
-  maxFont.setFamily("微软雅黑");
-  for(int i=0;i<9;i++)
-    {
-      ui->listWidget->item(i)->setTextColor(QColor(255,255,255,255));
-      ui->listWidget->item(i)->setFont(minFont);
-    }
   connect(CurrentTime,&QTimer::timeout,[=](){
       QTime tellTime=QTime::currentTime();
       QString strTime=tellTime.toString("hh:mm:ss");
@@ -59,37 +67,33 @@ MainWindow::MainWindow(QWidget *parent) :
           if(strTime==start[i])
             {
               int r3=ui->centralWidget->rect().width();
+              ui->listWidget->item(i)->setTextColor(QColor(0xDC,0x14,0x3C,0xFF));
+              if(i!=0)
+                {
+                  ui->listWidget->item(i-1)->setTextColor(QColor(255,255,255,255));
+                }
               if(ui->listWidget->isHidden()==false/*&&settings->value("/option/mousecheck").toBool()==true*/)
                 {
                   ui->pushButton->setText("↓");
                   ui->listWidget->setVisible(false);
-                  this->resize(r3,49);
-                  ui->listWidget->item(i)->setFont(maxFont);
-                  ui->listWidget->item(i)->setTextColor(QColor(0xDC,0x14,0x3C,0xFF));
-                  if(i!=0)
-                    {
+                  this->resize(r3,60);
 
-                      ui->listWidget->item(i-1)->setFont(minFont);
-                      ui->listWidget->item(i-1)->setTextColor(QColor(255,255,255,255));
-                    }
                 }
             }
           if(strTime==end[i])
             {
               int r3=ui->centralWidget->rect().width();
+              ui->listWidget->item(i)->setTextColor(QColor(255,255,255,255));
+              if(i!=8)
+                {
+                  ui->listWidget->item(i+1)->setTextColor(QColor(0xDC,0x14,0x3C,0xFF));
+                }
                if(ui->listWidget->isHidden()==true/*&&settings->value("/option/mousecheck").toBool()==true*/)
                 {
                   ui->pushButton->setText("↑");
                   ui->listWidget->setVisible(true);
                   this->resize(r3,800);
-                  ui->listWidget->item(i)->setFont(minFont);
-                  ui->listWidget->item(i)->setTextColor(QColor(255,255,255,255));
-                  if(i!=9)
-                    {
 
-                      ui->listWidget->item(i+1)->setFont(maxFont);
-                      ui->listWidget->item(i+1)->setTextColor(QColor(0xDC,0x14,0x3C,0xFF));
-                    }
                 }
             }
         }
@@ -101,12 +105,12 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::enterEvent(QEvent *)
 {
   //this->hide();
-  //int r3=ui->centralWidget->rect().width();
+  int r3=ui->centralWidget->rect().width();
    if(ui->listWidget->isHidden()==true&&settings->value("/option/mousecheck").toBool()==true)
     {
       ui->pushButton->setText("↑");
       ui->listWidget->setVisible(true);
-      //this->resize(r3,800);
+      this->resize(r3,800);
     }
 
 
@@ -115,12 +119,12 @@ void MainWindow::enterEvent(QEvent *)
 void MainWindow::leaveEvent(QEvent *)
 {
   //this->show();
-  //int r3=ui->centralWidget->rect().width();
+  int r3=ui->centralWidget->rect().width();
   if(ui->listWidget->isHidden()==false&&settings->value("/option/mousecheck").toBool()==true)
     {
       ui->pushButton->setText("↓");
       ui->listWidget->setVisible(false);
-      //this->resize(r3,49);
+      this->resize(r3,60);
     }
 
 
@@ -148,7 +152,7 @@ void MainWindow::on_pushButton_clicked()
     {
       ui->pushButton->setText("↓");
       ui->listWidget->setVisible(false);
-      this->resize(r3,49);
+      this->resize(r3,60);
 
     }
 

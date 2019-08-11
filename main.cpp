@@ -3,10 +3,15 @@
 #include <qpainter.h>
 #include <QDesktopWidget>
 #include <QRect>
+#include <QDir>
+#include <QSettings>
+
+
 
 int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
+
   MainWindow w;
   //w.setAttribute(Qt::WA_TranslucentBackground, true);
   //w.setWindowOpacity(0.5);
